@@ -39,3 +39,24 @@ function reverseV2(str){
     return str.split('').reverse().join('');
 }
 console.log(reverseV2('hello'));
+
+function reverseArray(arr) {
+  if (!Array.isArray(arr)) {
+    throw new Error("Input must be an array");
+  }
+
+  let left = 0;
+  let right = arr.length - 1;
+
+  // Swap elements until pointers meet
+  while (left < right) {
+    const temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+
+    left++;
+    right--;
+  }
+
+  return arr;
+}
